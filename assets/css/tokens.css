@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Hampstead Chiropractic Clinic — design tokens
+   Palette: deep spruce-teal (precision, calm) + warm rose-coral (human
+   warmth — this clinic treats a lot of babies, children and expectant
+   mothers, so the accent leans warmer/softer than a purely clinical site).
+   Deliberately distinct from sibling projects: golders-green-chiropractic
+   (bordeaux wine + slate), nw3-chiropractic (dusk indigo + sage),
+   dental-perfection (amethyst + rose-gold), hampstead-practice (botanical
+   green + clay). Contrast pairs verified against WCAG AA below.
+   ========================================================================== */
+
+:root {
+  /* --- Brand teal --- */
+  --color-teal: #0E5960;          /* primary — deep spruce teal. 7.35:1 on paper */
+  --color-teal-light: #5FA3AC;    /* text-safe teal on teal-deep bg (4.99:1) */
+  --color-teal-deep: #082F34;     /* darkest teal — hero scrim, footer, dark sections */
+  --color-teal-pale: #DCEBEA;     /* pale tint for chips/badges/backgrounds — not text */
+
+  /* --- Accent coral (warmth, family, care) --- */
+  --color-coral: #CD5468;         /* decorative/large-text/icons only on light bg (3.80:1) */
+  --color-coral-deep: #A83A48;    /* text-safe coral on paper/white (5.72:1 / 6.24:1) */
+  --color-coral-light: #E8899A;   /* text-safe coral on teal-deep bg (5.78:1) */
+  --color-coral-pale: #F7E3E6;    /* pale coral tint for chips/backgrounds — not text */
+
+  /* --- Neutrals --- */
+  --color-paper: #F1F6F5;         /* page background — cool seafoam-white, spa-calm */
+  --color-paper-dim: #E7EFED;     /* secondary panel background */
+  --color-surface: #FFFFFF;       /* card surface */
+  --color-ink: #16262A;           /* body text — deep teal-charcoal (14.31:1 on paper) */
+  --color-ink-soft: #48605F;      /* secondary text (6.18:1 on paper, 6.74:1 on white) */
+  --color-line: #D7E3E1;          /* hairline borders — decorative only */
+  --color-line-strong: #B9CBC8;
+  --color-white: #FFFFFF;
+
+  --hover-fill: color-mix(in oklch, var(--color-teal) 70%, black);
+
+  /* --- Semantic aliases --- */
+  --color-bg: var(--color-paper);
+  --color-text: var(--color-ink);
+  --color-text-soft: var(--color-ink-soft);
+  --color-primary: var(--color-teal);
+  --color-primary-deep: var(--color-teal-deep);
+  --color-accent: var(--color-coral);
+  --color-accent-deep: var(--color-coral-deep);
+
+  /* --- Type --- */
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* --- Shape / motion --- */
+  --radius-lg: 26px;
+  --radius-md: 16px;
+  --radius-sm: 9px;
+  --shadow-soft: 0 20px 44px -22px rgba(8, 47, 52, 0.38);
+  --shadow-tight: 0 8px 20px -12px rgba(8, 47, 52, 0.3);
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
