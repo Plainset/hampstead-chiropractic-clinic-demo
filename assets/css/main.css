@@ -8,7 +8,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: clip; }
 body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -283,13 +283,13 @@ p:last-child { margin-bottom: 0; }
 .hero__scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(in oklch 100deg, rgba(8,47,52,0.94) 8%, rgba(8,47,52,0.74) 42%, rgba(8,47,52,0.32) 78%);
+  background: linear-gradient(in oklch 100deg, rgba(8,47,52,0.94) 8%, rgba(8,47,52,0.80) 42%, rgba(8,47,52,0.65) 78%);
 }
 .hero__inner {
   position: relative;
   padding-block: clamp(120px, 20vw, 200px) clamp(80px, 12vw, 120px);
 }
-.hero h1 { color: var(--color-white); max-width: 16ch; }
+.hero h1 { color: var(--color-white); max-width: 16ch; text-shadow: 0 2px 18px rgba(0,0,0,0.35); }
 .hero__text-shadow, .hero p { text-shadow: 0 2px 18px rgba(0,0,0,0.35); }
 .hero .lede { color: color-mix(in srgb, var(--color-white) 92%, transparent); max-width: 50ch; font-size: 1.24rem; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 34px; }
