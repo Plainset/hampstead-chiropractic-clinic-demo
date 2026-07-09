@@ -9,6 +9,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+body { overflow-x: clip; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {
@@ -243,10 +244,16 @@ p:last-child { margin-bottom: 0; }
     transform: translateX(100%);
     transition: transform 0.4s var(--ease);
     box-shadow: var(--shadow-soft);
+    visibility: hidden;
+    pointer-events: none;
   }
   .nav__links a { font-size: 1.1rem; }
   html:has(body.nav-open) { overflow: hidden; }
-  body.nav-open .nav__links { transform: translateX(0); }
+  body.nav-open .nav__links {
+    transform: translateX(0);
+    visibility: visible;
+    pointer-events: auto;
+  }
   .nav .btn--primary { display: none; }
   body.nav-open .nav__scrim {
     position: fixed;
@@ -613,6 +620,11 @@ p:last-child { margin-bottom: 0; }
 
 @media (max-width: 780px) {
   .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 520px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .site-footer { overflow-wrap: anywhere; }
 }
 
 /* --- Scroll reveal --- */
